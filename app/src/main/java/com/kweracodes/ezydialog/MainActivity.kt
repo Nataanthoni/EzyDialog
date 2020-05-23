@@ -55,17 +55,14 @@ class MainActivity : AppCompatActivity() {
                 bottomSheetBehavior3.state = BottomSheetBehavior.STATE_COLLAPSED
         }
 
-        openLogin.setOnClickListener {
-            if (bottomSheetBehavior3.state != BottomSheetBehavior.STATE_EXPANDED) {
-                bottomSheetBehavior3.state = BottomSheetBehavior.STATE_EXPANDED
-            } else
-
-                bottomSheetBehavior3.state = BottomSheetBehavior.STATE_COLLAPSED
+        openSignup.setOnClickListener {
+            bottomSheetBehavior2.state = BottomSheetBehavior.STATE_COLLAPSED
+            bottomSheetBehavior3.state = BottomSheetBehavior.STATE_EXPANDED
         }
 
-        openSignup.setOnClickListener {
-                bottomSheetBehavior2.state = BottomSheetBehavior.STATE_COLLAPSED
-                bottomSheetBehavior3.state = BottomSheetBehavior.STATE_EXPANDED
+        openLogin.setOnClickListener {
+            bottomSheetBehavior3.state = BottomSheetBehavior.STATE_COLLAPSED
+            bottomSheetBehavior2.state = BottomSheetBehavior.STATE_EXPANDED
         }
 
     }

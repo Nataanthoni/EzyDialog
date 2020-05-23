@@ -72,6 +72,7 @@
             android:background="#ffffff"
             android:padding="5dp"
             android:text="Full Name"
+            android:textColor="#212121"
             app:layout_constraintBottom_toTopOf="@id/username"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/username" />
@@ -119,12 +120,14 @@
             android:background="#ffffff"
             android:padding="5dp"
             android:text="Password"
+            android:textColor="#212121"
             app:layout_constraintBottom_toTopOf="@id/password"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/password" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/login"
         android:layout_width="match_parent"
@@ -146,6 +149,16 @@
         android:padding="10dp"
         android:text="Sign Up Here"
         android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingEnd="20dp"
+        android:text="Forgot Password ?"
+        android:textAlignment="textEnd"
         android:textSize="18sp" />
 
 </LinearLayout>
