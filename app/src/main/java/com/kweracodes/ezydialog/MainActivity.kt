@@ -17,9 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Open dialog when button clicked
-        openDialog.setOnClickListener(View.OnClickListener { //calling this method to show our android custom alert dialog
+        openDialog.setOnClickListener {
+            //calling this method to show our android custom alert dialog
             openDialogOne()
-        })
+        }
     }
 
     private fun openDialogOne() {
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         //then we will inflate the custom alert dialog xml that we created
         val dialogView: View =
             LayoutInflater.from(this).inflate(R.layout.success_dialog, viewGroup, false)
-
 
         //Now we need an AlertDialog.Builder object
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
