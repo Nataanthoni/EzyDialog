@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EzyDialog</string>
+    <string name="open_dialog">OPEN DIALOG</string>
 </resources>
