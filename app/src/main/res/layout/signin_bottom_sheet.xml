@@ -125,12 +125,27 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <Button
+    <TextView
+        android:id="@+id/login"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="#000"
-        android:text="LOGIN"
-        android:textColor="#fff" />
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_sq"
+        android:padding="10dp"
+        android:text="LOG IN"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/openSignup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_sq_outline"
+        android:padding="10dp"
+        android:text="Sign Up Here"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
 </LinearLayout>
