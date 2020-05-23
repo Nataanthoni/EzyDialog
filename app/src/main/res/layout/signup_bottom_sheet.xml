@@ -121,9 +121,9 @@
             android:padding="5dp"
             android:text="Email Address"
             android:textColor="#212121"
-            app:layout_constraintBottom_toTopOf="@id/emailText"
+            app:layout_constraintBottom_toTopOf="@id/email"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/emailText" />
+            app:layout_constraintTop_toTopOf="@id/email" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -170,9 +170,9 @@
             android:padding="5dp"
             android:text="Phone"
             android:textColor="#212121"
-            app:layout_constraintBottom_toTopOf="@id/phoneText"
+            app:layout_constraintBottom_toTopOf="@id/phone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/phoneText" />
+            app:layout_constraintTop_toTopOf="@id/phone" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
