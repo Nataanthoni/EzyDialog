@@ -77,9 +77,10 @@ class MainActivity : AppCompatActivity() {
 
         proceedPayments.setOnClickListener {
 
-            val realNumber = editPhone.text.toString().trim().removePrefix("0")
+            val enteredNumber = editPhone.text.toString().trim()
+            val realNumber = enteredNumber.removePrefix("0")
             val phoneNumber = "256$realNumber"
-            realNumber.validator()
+            enteredNumber.validator()
                 .nonEmpty()
                 .minLength(9)
                 .maxLength(10)
