@@ -1,13 +1,16 @@
 package com.kweracodes.ezydialog
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_sheet.*
 import kotlinx.android.synthetic.main.signin_bottom_sheet.*
@@ -63,6 +66,66 @@ class MainActivity : AppCompatActivity() {
         openLogin.setOnClickListener {
             bottomSheetBehavior3.state = BottomSheetBehavior.STATE_COLLAPSED
             bottomSheetBehavior2.state = BottomSheetBehavior.STATE_EXPANDED
+        }
+
+        //open payments activity
+        openPayments.setOnClickListener {
+            val intent = Intent(this, Payments::class.java)
+            startActivity(intent)
+        }
+
+
+        proceedPayments.setOnClickListener {
+
+            val realNumber = editPhone.text.toString().trim().removePrefix("0")
+            val phoneNumber = "256$realNumber"
+            realNumber.validator()
+                .nonEmpty()
+                .minLength(9)
+                .maxLength(10)
+                .validNumber()
+                .addErrorCallback {
+                    editPhone.error = it
+                }
+                .addSuccessCallback {
+                    if (phoneNumber.startsWith("25670") || phoneNumber.startsWith("25675") || phoneNumber.startsWith(
+                            "25620"
+                        )
+                    ) {
+                        SweetAlertDialog(this@MainActivity, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Airtel Number")
+                            .setContentText("Proceed with payments. Are you sure?")
+                            .setCancelText("No")
+                            .setConfirmText("Pay")
+                            .show()
+                    } else if (phoneNumber.startsWith("25679")
+                    ) {
+                        SweetAlertDialog(this@MainActivity, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Africell Number")
+                            .setContentText("Proceed with payments. Are you sure?")
+                            .setCancelText("No")
+                            .setConfirmText("Pay")
+                            .show()
+                    } else if (phoneNumber.startsWith("25677") || phoneNumber.startsWith("25678") || phoneNumber.startsWith(
+                            "25639"
+                        )
+                    ) {
+                        SweetAlertDialog(this@MainActivity, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("MTN Number")
+                            .setContentText("Proceed with payments. Are you sure?")
+                            .setCancelText("No")
+                            .setConfirmText("Pay")
+                            .show()
+                    } else {
+                        SweetAlertDialog(this@MainActivity, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Invalid Number entered")
+                            .setContentText("Enter a valid Ugandan phone number!")
+                            .show()
+                    }
+                }
+                .check()
+
+
         }
 
     }
